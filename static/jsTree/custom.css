@@ -23,7 +23,7 @@ div#fileframe {
 
 div#contentframe {
 	background-color: #FFFFFF ;
-	background-image: url( "/static/jsTree/themes/default/content_background.gif" ) ;
+	background-image: url( "{% static "jsTree/themes/default/content_background.gif" %}" ) ;
 	background-position: left top ;
 	background-repeat: repeat-y ;
 	float: left ;
