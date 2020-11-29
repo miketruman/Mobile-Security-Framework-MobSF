@@ -151,6 +151,7 @@ APPX_MIME = [
 # ============DJANGO SETTINGS =================
 DEBUG = True
 DJANGO_LOG_LEVEL = DEBUG
+FORCE_SCRIPT_NAME = os.getenv('FORCE_SCRIPT_NAME', '')
 ALLOWED_HOSTS = ['127.0.0.1', 'mobsf', '*']
 # Application definition
 INSTALLED_APPS = (
@@ -202,8 +203,8 @@ TEMPLATES = [
     },
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-MEDIA_URL = '/uploads/'
-STATIC_URL = '/static/'
+MEDIA_URL = FORCE_SCRIPT_NAME + '/uploads/'
+STATIC_URL = FORCE_SCRIPT_NAME + '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # 256MB
